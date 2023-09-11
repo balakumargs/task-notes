@@ -1,0 +1,68 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #bf8347;
+}
+#container {
+    width: 350px;
+    height: 320px;
+    background-color: #676763;
+    margin: 100px auto;
+}
+#logo {
+    text-align: center;
+}
+
+img {
+    margin: 20px 0px;
+}
+
+#signin {
+    display: block;
+    background-color: #f26c38;
+    color: white;
+    border: 1px solid #f26c38;
+    cursor: pointer;
+    width: 290px;
+    margin: auto;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.input-field {
+    padding: 10px;
+    padding-left: 30px;
+    text-align: left;
+    margin: auto;
+    margin-bottom: 5px;
+    width: 250px;
+    outline: 0;
+    font-family: tahame;
+}
+
+p {
+    color: #eef29d;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 11px;
+    margin-left: 25px;
+}
+
+footer {
+    margin: 10px;
+    color: rgb(241, 219, 219);
+    font-size: 11px;
+    text-align: center;
+}
+
+.inputWithIcon {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.icon {
+    position: absolute;
+    padding: 10px;
+    padding-left: 0.2px;
+    min-width: 30px;
+    opacity: 0.4;
+}

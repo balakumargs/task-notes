@@ -1,0 +1,19 @@
+<form #f1="ngForm" (ngSubmit)="onSubmit()">
+    <div id="container">
+        <div id="logo">
+            <img src="../../assets/logo.jpg" style="width: 150px; height: 50px" alt="Exterro">
+            <div class="inputWithIcon">
+                <mat-icon class="icon">person</mat-icon>
+                <input class="input-field" type="text" name="username" placeholder="Enter Username"
+                    [(ngModel)]="user.username" />
+            </div>
+            <div class="inputWithIcon">
+                <mat-icon class="icon">key</mat-icon>
+                <input class="input-field" type="password" name="password" placeholder="Enter Password"
+                    [(ngModel)]="user.password" />
+            </div>
+            <button id="signin" type="submit">Sign in</button>
+        </div>
+        <footer>&#169; 2023 Exterro Inc. All rights reserved</footer>
+    </div>
+</form>

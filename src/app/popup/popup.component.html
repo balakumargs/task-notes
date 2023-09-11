@@ -1,0 +1,68 @@
+<div id="drag" cdkDrag cdkDragRootElement=".cdk-overlay-pane" cdkDragHandle>
+</div>
+<mat-dialog-content id="popupContainer">
+    <div>
+        <input class="textBox" [disabled]="editFlag" type="text" placeholder="Create Notes -- Enter Your title"
+            [(ngModel)]="title" (input)="checkTitle()" />
+        <div style="font-size: 14px; padding-left: 10px;"><mat-error *ngIf="title==''">Enter a title</mat-error></div>
+    </div>
+    <div class="label" *ngIf="title != ''">
+
+        <mat-radio-group [(ngModel)]="label">
+            <mat-radio-button value="Personal">Personal<mat-icon class="ico"
+                    fontIcon="emoji_people"></mat-icon></mat-radio-button>
+            <mat-radio-button value="Official">Official<mat-icon class="ico"
+                    fontIcon="gavel"></mat-icon></mat-radio-button>
+            <mat-radio-button value="General">General
+                <mat-icon class="ico" fontIcon="settings_accessibility"></mat-icon></mat-radio-button>
+        </mat-radio-group>
+    </div>
+    <div>
+        <div>
+            <input matInput class="note" type="text" *ngIf="title != ''" placeholder="Take a note..."
+                [(ngModel)]="taskName" (keyUp.enter)="addTask()" />
+            <!-- <button mat-icon-button class="addIcon" *ngIf="title != ''" (click)="addTask()">
+                <mat-icon>add</mat-icon></button> -->
+        </div>
+    </div>
+    <div *ngIf="flag">
+        <div style="font-weight: bold; padding-top: 5px;"> To Do Items</div>
+        <div>
+            <div class="no-bullets" *ngFor="let task of taskList">
+                <div *ngIf="!task.status" class="highlight">
+                    <input type="checkbox" value="task.item" [checked]="task.status"
+                        (change)="changeVal($event, task.id)" /><span *ngIf="!task.status"
+                        style="font-size: 14px; color: black">
+                        {{ task.item }}
+                    </span>
+                    <span><mat-icon *ngIf="!task.status" (click)="delete(task.id)" class="closeIcon"
+                            fontIcon="close"></mat-icon>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div style="font-weight: bold; padding-top: 5px;">Completed Items</div>
+        <div>
+            <div class="no-bullets" *ngFor="let task of taskList">
+                <div *ngIf="task.status" class="highlight">
+                    <div>
+                        <input type="checkbox" value="task.item" *ngIf="task.status" [checked]="task.status"
+                            (change)="changeVal($event, task.id)" /><span *ngIf="task.status"
+                            style="font-size: 14px;">{{task.item
+                            }}</span>
+                        <span>
+                            <mat-icon *ngIf="task.status" (click)="delete(task.id)" class="closeIcon"
+                                fontIcon="close"></mat-icon>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end" class="botBtn">
+    <button mat-button class="save" [ngStyle]="{'background-color': saveFlag?'grey' : 'green'}" (click)="popSave()"
+        [disabled]="saveFlag">Save</button>
+    <button mat-button class="cancel" (click)="closeDialog()">close</button>
+    <!-- <button mat-dialog-close>Close</button> -->
+</mat-dialog-actions>

@@ -1,0 +1,27 @@
+<div class="header">
+    <div class="keep">
+        <div class="common">
+            {{appTitle}}
+        </div>
+    </div>
+    <div class="hello">
+        <div class="common">
+            <button mat-icon-button class="viewStyle" *ngIf="viewFlag" title="Grid view" (click)="changeView()">
+                <mat-icon>grid_view</mat-icon>
+            </button>
+            <button mat-icon-button class="viewStyle" *ngIf="!viewFlag" (click)="changeView()">
+                <mat-icon>view_agenda</mat-icon>
+            </button>
+            Hello {{ username }}
+        </div>
+    </div>
+</div>
+<div>
+    <div>
+        <div class="appSide"><app-side (eventEmitter)="setVal($event)"></app-side></div>
+
+    </div>
+    <div>
+        <div class="mainSide"><app-main [label]="label" [view]="view"></app-main></div>
+    </div>
+</div>

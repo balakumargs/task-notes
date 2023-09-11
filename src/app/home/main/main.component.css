@@ -1,0 +1,104 @@
+.search {
+    background-color: white;
+    padding: 20px;   
+    text-align: center;
+}
+.searchBox {
+    width: 400px;
+    padding: 12px 20px; 
+    border: 1px solid rgb(235, 224, 224);
+    border-radius: 5px;   
+    outline: 0;
+    font-size: 15px;
+    background-color:#f1f1f1;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.filterIcon  {
+    position: relative;
+    top: 7px;
+    left: 5px;
+}
+.clearFilter{
+    position: relative;
+    top: 7px;
+    right: 50px;
+    opacity: 0.6;    
+}
+
+.no-bullets {
+    list-style-type: none;
+    padding-left: 20px;
+    text-align: justify;
+}
+.closeIcon {
+    color: red;
+    position: relative;
+    top: 8px;
+    cursor: pointer;
+    font-size: 20px;
+    padding-left: 5px;
+}
+#createNote {
+    text-align: center;
+    padding: 10px;
+}
+.noNotes {
+    color: #5f6368;  
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-size: 1.375rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.75rem;
+    text-align: center; 
+    margin-top: 120px; 
+}
+.card, .emptyTrash {
+    background-color:rgb(240, 237, 237);
+    text-align: center;
+    font-size: 20px;
+    
+}
+.ico {
+    position: relative;
+    top: 5px;
+}
+.bin, .pin, .edit {
+    position: absolute;
+    top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.bin {
+    position: absolute;
+    right: 2px;
+}
+.pin {
+    position: absolute;
+    right: 40px;
+}
+.edit {
+    position: absolute;
+    right: 80px;
+}
+
+.cardColor {
+    background-color: #f4e1e8;
+    padding-top: 20px;
+    position: absolute;
+    top: 10px;
+    max-height: 300px;
+    overflow-y: hidden;
+}
+.listItems {
+    font-weight: bold;         
+    margin-top: 5px; 
+    position: sticky;
+    top: 0px; 
+    padding-bottom: 4px; 
+    background-color: #f4e1e8;
+}
+.scroll:hover {
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}

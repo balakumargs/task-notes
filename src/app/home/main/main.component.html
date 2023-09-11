@@ -1,0 +1,74 @@
+<div class="search">
+    <input matInput class="searchBox" (input)="filter()" name="search" type="text" placeholder="Search"
+        [(ngModel)]="searchText">
+    <button mat-icon-button class="clearFilter" (click)="clearFilter()">
+        <mat-icon>close</mat-icon>
+    </button>
+    <!-- <button mat-icon-button class="filterIcon" (click)="filter()">
+        <mat-icon>search</mat-icon>
+    </button> -->
+</div>
+<div id="createNote">
+    <button mat-button class="card" (click)="openPopup()" *ngIf='label!="Trash"'>
+        Create a note &#43;
+    </button>
+    <button mat-button class="emptyTrash" (click)="emptyTrash()" *ngIf='label=="Trash"'>
+        Empty a trash
+    </button>
+</div>
+<div class="noNotes" *ngIf="viewList.length==0">Notes are Empty</div>
+<div>
+    <mat-grid-list [cols]="viewCardCol" rowHeight="170px" gutterSize="0.2px" *ngIf="cardFlag">
+        <mat-grid-tile [colspan]="1" [rowspan]="2" *ngFor="let notes of viewList">
+            <mat-card class="cardColor" [ngStyle]="{width:(view=='list')?'450px':'250px'}">
+                <mat-card-header>
+                    <mat-card-title>{{ notes.title }}</mat-card-title>
+                    <mat-card-subtitle>{{ notes.label }}</mat-card-subtitle>
+                    <mat-icon class="edit" title='edit note' *ngIf='label!="Trash"'
+                        (click)="editPopup(notes)">edit_square</mat-icon>
+                    <mat-icon class="pin" *ngIf='label !="Trash"' [ngStyle]="{'color':notes.pinned? 'green': 'red' }"
+                        [title]="notes.pinned?'unpin note':'pin note'" (click)="pinMe(notes.title)">push_pin</mat-icon>
+                    <mat-icon class="bin" *ngIf='label!="Trash"' title='delete note'
+                        (click)="deleteNote(notes.title)">delete_outline</mat-icon>
+                </mat-card-header>
+                <mat-divider></mat-divider>
+                <mat-card-content class="scroll">
+                    <div>
+                        <div class="listItems">
+                            To Do Items</div>
+                        <div>
+                            <div class="no-bullets" *ngFor="let task of notes.tasks">
+                                <div *ngIf="!task.status">
+                                    <input style="cursor: pointer;" type="checkbox" value="task.item"
+                                        [checked]="task.status"
+                                        (change)="changeCardVal($event, notes.title, task.id)" />
+                                    <span style="padding-top: 2px;" *ngIf="!task.status">
+                                        {{ task.item
+                                        }}</span>
+                                    <!-- <mat-icon *ngIf="!task.status"
+                                        (click)="deleteCardVal(notes.title, task.id)" class="closeIcon"
+                                        fontIcon="close"></mat-icon> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="listItems">
+                            Completed Items</div>
+                        <div>
+                            <div class="no-bullets" *ngFor="let task of notes.tasks">
+                                <div *ngIf="task.status">
+                                    <input type="checkbox" value="task.item" [checked]="task.status"
+                                        (change)="changeCardVal($event, notes.title, task.id)" />
+                                    <del *ngIf="task.status">{{ task.item
+                                        }}</del>
+                                    <!-- <mat-icon *ngIf="task.status"
+                                        (click)="deleteCardVal(notes.title, task.id)" class="closeIcon"
+                                        fontIcon="close"></mat-icon> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

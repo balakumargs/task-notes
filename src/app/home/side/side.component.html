@@ -1,0 +1,31 @@
+<div class="appSide">
+    <button mat-button class="sideBtn" (click)="viewAll()"
+        [ngStyle]="{'background-color':label=='All'? '#feefc3' : 'white' }">
+        All<mat-icon class="ico" fontIcon="select_all"></mat-icon>
+    </button>
+    <div>
+        <button mat-button class="sideBtn" (click)="viewPersonal()"
+            [ngStyle]="{'background-color':label=='Personal'? '#feefc3' : 'white' }">
+            Personal<mat-icon class="ico" fontIcon="emoji_people"></mat-icon>
+        </button>
+    </div>
+
+    <div>
+        <button mat-button class="sideBtn" (click)="viewOfficial()"
+            [ngStyle]="{'background-color':label=='Official'? '#feefc3' : 'white' }">
+            Official <mat-icon class="ico" fontIcon="gavel"></mat-icon>
+        </button>
+    </div>
+    <div>
+        <button mat-button class="sideBtn" (click)="viewGeneral()"
+            [ngStyle]="{'background-color':label=='General'? '#feefc3' : 'white' }">
+            General <mat-icon class="ico" fontIcon="settings_accessibility"></mat-icon>
+        </button>
+    </div>
+    <div>
+        <button mat-button class="sideBtn" (click)="trash()"
+            [ngStyle]="{'background-color':label=='Trash'? '#feefc3' : 'white' }">
+            Trash <mat-icon class="ico" fontIcon="auto_delete"></mat-icon>
+        </button>
+    </div>
+</div>

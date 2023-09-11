@@ -1,0 +1,66 @@
+#popupContainer {
+    padding: 20px 10px 10px 30px;
+}
+#drag {
+    cursor: move;
+    color: black;
+    padding: 15px;
+    font-size: 18px;
+}
+.label {
+    margin: 15px 0px; 
+}
+ul.no-bullets {
+    list-style-type: none;
+    cursor: pointer;
+    padding-left: 10px;
+}
+.textBox {
+    padding: 7px;
+    margin-bottom: 5px;
+    width: 350px;
+    border: 1px solid black;
+    border-radius: 5px;
+    outline: 0;
+}
+.note {
+    width: 200px;
+    padding: 6px;
+    border: 1px solid black;
+    border-radius: 5px;;
+    outline: 0px;
+}
+/* .addIcon {
+    position: relative;
+    top:6px;
+    left: 3px;
+} */
+.closeIcon{
+    color: red;    
+    float: right;   
+    top: 6px;    
+    cursor: pointer;
+    display: none;   
+}
+.save, .cancel {
+    color: white;
+    padding: 15px;
+}
+.save {
+    background-color: rgb(50, 164, 50);
+}
+.cancel {
+    margin-left: 15px; 
+    background-color: rgb(220, 58, 58);
+}
+.botBtn {
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+}
+.highlight:hover {
+    background-color: rgb(252, 244, 244);
+}
+.no-bullets:hover .closeIcon  {
+    display: block;
+}

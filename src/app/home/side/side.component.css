@@ -1,0 +1,14 @@
+.sideBtn {
+    width: 100%;
+    border: 1px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 25px 0px;
+}
+
+.sideBtn:hover {
+    background-color: #feefc3;
+}
+.ico {
+    text-align: left;
+}
